@@ -1,13 +1,6 @@
 import { convertDecimalToRoman } from "./decimalToRoman";
 
 describe("convertDecimalToRoman function", () => {
-  test("should convert simple numbers up to 10", () => {
-    // Arrange
-    const input = 2;
-    // Act & Assert
-    expect(convertDecimalToRoman(input)).toBe("II");
-  });
-
   test("should throw an error for numbers out of range for Roman numerals", () => {
     // Arrange
     const errorMsg = "convertDecimalToRoman - The Romans had no version of ";
@@ -30,15 +23,6 @@ describe("convertDecimalToRoman function", () => {
       convertDecimalToRoman(invalidInputs[3]);
     }).toThrow(Error(errorMsg + invalidInputs[3]));
   });
-
-  test("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
-    // Arrange, Act and Assert
-    expect(convertDecimalToRoman(4)).toBe("IV");
-    expect(convertDecimalToRoman(9)).toBe("IX");
-    expect(convertDecimalToRoman(40)).toBe("XL");
-    expect(convertDecimalToRoman(90)).toBe("XC");
-  });
-
   test("should return a single numeral for an exact numeral value input", () => {
     // Arrange
     const numeralValues = [1, 5, 10, 50, 100, 500, 1000];
@@ -53,8 +37,20 @@ describe("convertDecimalToRoman function", () => {
     expect(convertDecimalToRoman(numeralValues[5])).toBe(romanNumerals[5]);
     expect(convertDecimalToRoman(numeralValues[6])).toBe(romanNumerals[6]);
   });
+  test("should convert simple numbers up to 10", () => {
+    // Arrange
+    const input = 2;
+    // Act & Assert
+    expect(convertDecimalToRoman(input)).toBe("II");
+  });
+  test("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
+    // Arrange, Act and Assert
+    expect(convertDecimalToRoman(4)).toBe("IV");
+    expect(convertDecimalToRoman(9)).toBe("IX");
+    expect(convertDecimalToRoman(40)).toBe("XL");
+    expect(convertDecimalToRoman(90)).toBe("XC");
+  });
 
-  // Needed with TS??
   test("should", () => {
     // Arrange
     // Act
