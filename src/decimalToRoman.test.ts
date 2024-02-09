@@ -31,20 +31,31 @@ describe("convertDecimalToRoman function", () => {
     }).toThrow(Error(errorMsg + invalidInputs[3]));
   });
 
-  test("should return 0 when all others are minus numbers", () => {
-    // Arrange
-    // Act
-    // Assert
+  test("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
+    // Arrange, Act and Assert
+    expect(convertDecimalToRoman(4)).toBe("IV");
+    expect(convertDecimalToRoman(9)).toBe("IX");
+    expect(convertDecimalToRoman(40)).toBe("XL");
+    expect(convertDecimalToRoman(90)).toBe("XC");
   });
 
-  test("should return the only value for a one digit array", () => {
+  test("should return a single numeral for an exact numeral value input", () => {
     // Arrange
-    // Act
-    // Assert
+    const numeralValues = [1, 5, 10, 50, 100, 500, 1000];
+    const romanNumerals = ["I", "V", "X", "L", "C", "D", "M"];
+
+    // Act && Assert
+    expect(convertDecimalToRoman(numeralValues[0])).toBe(romanNumerals[0]);
+    expect(convertDecimalToRoman(numeralValues[1])).toBe(romanNumerals[1]);
+    expect(convertDecimalToRoman(numeralValues[2])).toBe(romanNumerals[2]);
+    expect(convertDecimalToRoman(numeralValues[3])).toBe(romanNumerals[3]);
+    expect(convertDecimalToRoman(numeralValues[4])).toBe(romanNumerals[4]);
+    expect(convertDecimalToRoman(numeralValues[5])).toBe(romanNumerals[5]);
+    expect(convertDecimalToRoman(numeralValues[6])).toBe(romanNumerals[6]);
   });
 
   // Needed with TS??
-  test("should throw an error for a none number array", () => {
+  test("should", () => {
     // Arrange
     // Act
     // Assert
