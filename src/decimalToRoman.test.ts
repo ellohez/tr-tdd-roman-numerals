@@ -10,11 +10,25 @@ describe("convertDecimalToRoman function", () => {
 
   test("should throw an error for numbers out of range for Roman numerals", () => {
     // Arrange
-    // Act
-    // Assert
+    const errorMsg = "convertDecimalToRoman - The Romans had no version of ";
+    // Store all values which cannot be converted
+    const invalidInputs = [-30, 0, 4000, 7.5];
+    // Act & Assert
     expect(() => {
-      convertDecimalToRoman(0);
-    }).toThrow(Error);
+      convertDecimalToRoman(invalidInputs[0]);
+    }).toThrow(Error(errorMsg + invalidInputs[0]));
+
+    expect(() => {
+      convertDecimalToRoman(invalidInputs[1]);
+    }).toThrow(Error(errorMsg + invalidInputs[1]));
+
+    expect(() => {
+      convertDecimalToRoman(invalidInputs[2]);
+    }).toThrow(Error(errorMsg + invalidInputs[2]));
+
+    expect(() => {
+      convertDecimalToRoman(invalidInputs[3]);
+    }).toThrow(Error(errorMsg + invalidInputs[3]));
   });
 
   test("should return 0 when all others are minus numbers", () => {
