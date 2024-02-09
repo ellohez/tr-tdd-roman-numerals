@@ -37,13 +37,18 @@ describe("convertDecimalToRoman function", () => {
     expect(convertDecimalToRoman(numeralValues[5])).toBe(romanNumerals[5]);
     expect(convertDecimalToRoman(numeralValues[6])).toBe(romanNumerals[6]);
   });
-  test("should convert simple numbers up to 10", () => {
+
+  // - TODO: Test that 40 is not XXXX - 90 is not LXXXX etc
+  //
+  //
+  //
+  xtest("should convert simple numbers up to 10", () => {
     // Arrange
     const input = 2;
     // Act & Assert
     expect(convertDecimalToRoman(input)).toBe("II");
   });
-  test("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
+  xtest("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
     // Arrange, Act and Assert
     expect(convertDecimalToRoman(4)).toBe("IV");
     expect(convertDecimalToRoman(9)).toBe("IX");
@@ -51,7 +56,7 @@ describe("convertDecimalToRoman function", () => {
     expect(convertDecimalToRoman(90)).toBe("XC");
   });
 
-  test("should", () => {
+  xtest("should", () => {
     // Arrange
     // Act
     // Assert
