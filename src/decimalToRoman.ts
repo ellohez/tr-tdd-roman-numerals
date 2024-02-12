@@ -53,24 +53,38 @@ export const convertDecimalToRoman = (decimal: number): string => {
   // Reverse the array, so that we deal with the
   // ones, tens, hundreds and thousands in that order.
   arrayOfNumbers.reverse();
-  let onesInNumerals =
-    numeralMap.get(arrayOfNumbers[0]) !== undefined
-      ? numeralMap.get(arrayOfNumbers[0])
-      : "";
+
+
+  const onesInNumerals = numeralMap.get(arrayOfNumbers[0]) ?? "";
+
   let tensInNumerals = "";
   if (arrayOfNumbers.length > 1) {
     if (arrayOfNumbers[1] === 0) {
       tensInNumerals = "";
     }
-    const testValue = numeralMap.get(arrayOfNumbers[1] * 10);
-    testValue !== undefined ? (tensInNumerals = testValue) : "";
+    tensInNumerals = numeralMap.get(arrayOfNumbers[1] * 10) ?? "";
   }
-  // hundredsInNumerals = arrayOfNumbers.length > 2 && arrayOfNumbers[2] * 100 !== 0 ? convert array number : "";
-  // thousandsInNumerals = arrayOfNumbers.length > 3 && arrayOfNumbers[3] * 1000 !== 0 ? convert array number : "";
 
-  romanNumerals += tensInNumerals + onesInNumerals;
+  let hundredsInNumerals = "";
+  if (arrayOfNumbers.length > 2) {
+    if (arrayOfNumbers[2] === 0) {
+      hundredsInNumerals = "";
+    }
+    hundredsInNumerals = numeralMap.get(arrayOfNumbers[2] * 100) ?? "";
+  }
 
-  // TODO: Convert and return - this is just for testing.
-  return romanNumerals !== "" ? romanNumerals : decimal.toString();
+  let thousandsInNumerals = "";
+  if (arrayOfNumbers.length > 3) {
+    if (arrayOfNumbers[2] === 0) {
+      thousandsInNumerals = "";
+    }
+    thousandsInNumerals = numeralMap.get(arrayOfNumbers[3] * 1000) ?? "";
+  }
+
+  // Put it all together
+  romanNumerals =
+    thousandsInNumerals + hundredsInNumerals + tensInNumerals + onesInNumerals;
+
+  return romanNumerals;
 };
 

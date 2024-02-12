@@ -75,7 +75,7 @@ describe("convertDecimalToRoman function", () => {
     expect(convertDecimalToRoman(decimalValues[6])).toBe(romanNumerals[6]);
   });
   // Test that 40 !== XXXX, 90 is not LXXXX etc
-  xtest("should only use addition method for a max of 3 smaller numerals", () => {
+  test("should only use addition method for a max of 3 smaller numerals", () => {
     // Arrange
     const decimalValues = [4, 40, 90, 900];
     const incorrectNumerals = ["IIII", "XXXX", "LXXXX", "DCCCC"];
@@ -95,7 +95,7 @@ describe("convertDecimalToRoman function", () => {
     );
   });
   // Test that 8 !== IIX, 70 !== XXXC etc.
-  xtest("should only use subtraction method to give one smaller numeral before a larger one", () => {
+  test("should only use subtraction method to give one smaller numeral before a larger one", () => {
     // Arrange
     const decimalValues = [8, 60, 70, 880];
     const incorrectNumerals = ["IIX", "XXXXC", "XXXC", "CCMXXC"];
@@ -114,7 +114,7 @@ describe("convertDecimalToRoman function", () => {
       incorrectNumerals[3]
     );
   });
-  xtest("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
+  test("should return the correct pair of numerals that subtract for any values including a 4 or a 9", () => {
     // Arrange, Act and Assert
     expect(convertDecimalToRoman(4)).toBe("IV");
     expect(convertDecimalToRoman(9)).toBe("IX");
