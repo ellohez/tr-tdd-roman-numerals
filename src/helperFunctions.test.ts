@@ -1,4 +1,7 @@
-import { validateDecimalWithinRomanLimits } from "./helperFunctions";
+import {
+  validateDecimalWithinRomanLimits,
+  splitByPowerOfTen,
+} from "./helperFunctions";
 
 describe("validateDecimalWithinRomanLimits", () => {
   test("should return false if decimal cannot be converted using Roman numeral system", () => {
@@ -11,5 +14,16 @@ describe("validateDecimalWithinRomanLimits", () => {
     expect(validateDecimalWithinRomanLimits(invalidInputs[1])).toBe(false);
     expect(validateDecimalWithinRomanLimits(invalidInputs[2])).toBe(false);
     expect(validateDecimalWithinRomanLimits(invalidInputs[3])).toBe(false);
+  });
+});
+
+describe("splitByPowerOfTen", () => {
+  test("should return an array of number of thousands, hundreds, tens, ones", () => {
+    // Arrange
+    // Act & assert
+    expect(splitByPowerOfTen(1234)).toEqual([1, 2, 3, 4]);
+    expect(splitByPowerOfTen(234)).toEqual([2, 3, 4]);
+    expect(splitByPowerOfTen(34)).toEqual([3, 4]);
+    expect(splitByPowerOfTen(4)).toEqual([4]);
   });
 });
