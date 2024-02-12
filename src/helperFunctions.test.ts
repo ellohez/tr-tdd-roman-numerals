@@ -1,6 +1,6 @@
 import {
   validateDecimalWithinRomanLimits,
-  splitByPowerOfTen,
+  splitDecimalIntoDigits,
 } from "./helperFunctions";
 
 describe("validateDecimalWithinRomanLimits", () => {
@@ -17,13 +17,14 @@ describe("validateDecimalWithinRomanLimits", () => {
   });
 });
 
-describe("splitByPowerOfTen", () => {
+describe("splitDecimalIntoDigits", () => {
   test("should return an array of number of thousands, hundreds, tens, ones", () => {
     // Arrange
     // Act & assert
-    expect(splitByPowerOfTen(1234)).toEqual([1, 2, 3, 4]);
-    expect(splitByPowerOfTen(234)).toEqual([2, 3, 4]);
-    expect(splitByPowerOfTen(34)).toEqual([3, 4]);
-    expect(splitByPowerOfTen(4)).toEqual([4]);
+    expect(splitDecimalIntoDigits(1234)).toEqual([1, 2, 3, 4]);
+    expect(splitDecimalIntoDigits(234)).toEqual([2, 3, 4]);
+    expect(splitDecimalIntoDigits(34)).toEqual([3, 4]);
+    expect(splitDecimalIntoDigits(4)).toEqual([4]);
+    expect(splitDecimalIntoDigits(3099)).toEqual([3, 0, 9, 9]);
   });
 });
