@@ -51,6 +51,29 @@ describe("convertDecimalToRoman function", () => {
     expect(convertDecimalToRoman(decimalValues[5])).toBe(romanNumerals[5]);
     expect(convertDecimalToRoman(decimalValues[6])).toBe(romanNumerals[6]);
   });
+  test("should convert numbers between 10 and 100", () => {
+    // Arrange
+    const decimalValues = [10, 21, 32, 43, 54, 65, 76, 87, 98];
+    const romanNumerals = [
+      "X",
+      "XXI",
+      "XXXII",
+      "XLIII",
+      "LIV",
+      "LXV",
+      "LXXVI",
+      "LXXXVII",
+      "XCVIII",
+    ];
+    // Act & Assert
+    expect(convertDecimalToRoman(decimalValues[0])).toBe(romanNumerals[0]);
+    expect(convertDecimalToRoman(decimalValues[1])).toBe(romanNumerals[1]);
+    expect(convertDecimalToRoman(decimalValues[2])).toBe(romanNumerals[2]);
+    expect(convertDecimalToRoman(decimalValues[3])).toBe(romanNumerals[3]);
+    expect(convertDecimalToRoman(decimalValues[4])).toBe(romanNumerals[4]);
+    expect(convertDecimalToRoman(decimalValues[5])).toBe(romanNumerals[5]);
+    expect(convertDecimalToRoman(decimalValues[6])).toBe(romanNumerals[6]);
+  });
   // Test that 40 !== XXXX, 90 is not LXXXX etc
   xtest("should only use addition method for a max of 3 smaller numerals", () => {
     // Arrange
