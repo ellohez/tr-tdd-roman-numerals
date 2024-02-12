@@ -96,5 +96,6 @@ describe("convertDecimalToRoman function", () => {
     expect(convertDecimalToRoman(9)).toBe("IX");
     expect(convertDecimalToRoman(40)).toBe("XL");
     expect(convertDecimalToRoman(90)).toBe("XC");
+    expect(convertDecimalToRoman(900)).toBe("CM");
   });
 });
