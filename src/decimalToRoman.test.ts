@@ -3,25 +3,26 @@ import { convertDecimalToRoman } from "./decimalToRoman";
 describe("convertDecimalToRoman function", () => {
   test("should throw an error for numbers out of range for Roman numerals", () => {
     // Arrange
-    const errorMsg = "convertDecimalToRoman - The Romans had no version of ";
+    const errorMsg =
+      "convertDecimalToRoman - Unfortunately, the Romans had no version of ";
     // Store all values which cannot be converted
     const invalidInputs = [-30, 0, 4000, 7.5];
     // Act & Assert
     expect(() => {
       convertDecimalToRoman(invalidInputs[0]);
-    }).toThrow(Error(errorMsg + invalidInputs[0]));
+    }).toThrow(Error(errorMsg + invalidInputs[0] + "!"));
 
     expect(() => {
       convertDecimalToRoman(invalidInputs[1]);
-    }).toThrow(Error(errorMsg + invalidInputs[1]));
+    }).toThrow(Error(errorMsg + invalidInputs[1] + "!"));
 
     expect(() => {
       convertDecimalToRoman(invalidInputs[2]);
-    }).toThrow(Error(errorMsg + invalidInputs[2]));
+    }).toThrow(Error(errorMsg + invalidInputs[2] + "!"));
 
     expect(() => {
       convertDecimalToRoman(invalidInputs[3]);
-    }).toThrow(Error(errorMsg + invalidInputs[3]));
+    }).toThrow(Error(errorMsg + invalidInputs[3] + "!"));
   });
   test("should return a single numeral for an exact numeral value input", () => {
     // Arrange

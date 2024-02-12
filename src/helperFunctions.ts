@@ -12,7 +12,7 @@ export const validateDecimalWithinRomanLimits = (decimal: number): boolean => {
 
 // Convert a number to into its individual digits to
 // represent the number of thousands, hundreds etc. 
-export const splitByPowerOfTen = (decimal: number): Array<number> => {
+export const splitDecimalIntoDigits = (decimal: number): Array<number> => {
   if (decimal <= 0 || decimal === undefined) {
     return [];
   }
