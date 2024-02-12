@@ -93,7 +93,6 @@
     "human-signals": "^2.1.0",
     "import-local": "^3.1.0",
     "imurmurhash": "^0.1.4",
-    "inflight": "^1.0.6",
     "inherits": "^2.0.4",
     "is-arrayish": "^0.2.1",
     "is-core-module": "^2.13.1",
